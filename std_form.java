@@ -299,7 +299,7 @@ public class std_form extends javax.swing.JFrame {
             int id=Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/student_db","root", "");
-            String sql="update std_table set Name=?,F_name=?,Address=?,Gender=?,Age=? where id=?";
+            String sql="update std_table set Name=?,F_name=?,Address=?,Gender=?,Age=? deleted=0 where id=?";
             PreparedStatement ptst=conn.prepareStatement(sql);
             ptst.setString(1, name_field.getText());
             ptst.setString(2, f_name_field.getText());
